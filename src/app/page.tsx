@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useRef, useState } from "react";
+import { LockSlider } from "./components/slider";
 
 export default function Home() {
   return (
@@ -16,18 +19,28 @@ export default function Home() {
       {/* Bottom Section (4/5 height) */}
       <section className="h-4/5 flex-row text-white px-10 flex relative">
         {/* Left Section */}
-        <div className="w-1/2 bg-red-950 flex items-center justify-center">
+        <div className="w-1/2 flex-col bg-red-950 flex items-center justify-center">
           <p className="text-lg">MOVIE Section</p>
-        </div>
 
+          <div className="absolute bottom-5 w-64 mt-10">
+            <LockSlider />
+          </div>
+        </div>
         {/* Right Section */}
         <div className="w-1/2 bg-green-950 flex items-center justify-center">
           <p className="text-lg">DINNER Section</p>
+          <div className="absolute bottom-5 w-64 mt-10">
+            <LockSlider />
+          </div>
         </div>
 
         {/* Middle Button */}
-        <button className="absolute top-1/2 left-1/2 h-28 transform -translate-x-1/2 -translate-y-1/2 px-6 py-2 bg-white text-blue-950 font-bold rounded-lg hover:bg-gray-200">
-          Start Planning
+        <button className="absolute top-1/2 left-1/2 h-14 w-14 transform -translate-x-1/2 -translate-y-1/2 bg-white text-blue-950 font-bold rounded-lg hover:bg-gray-200 flex items-center justify-center">
+          <img
+            className="h-8 w-8"
+            src="/refresh-page-option.png"
+            alt="refresh"
+          />
         </button>
       </section>
     </main>
